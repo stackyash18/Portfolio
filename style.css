@@ -160,7 +160,7 @@ body{
   text-align: center;
   margin-bottom: 15px;
   margin-top: 20px;
-  transition: trnsform 0.3s ease, shadow 0.3s ease;
+  transition: transform 0.5s ease, shadow 0.5s ease 0.5s;
  }
 
  .item img{
@@ -170,9 +170,8 @@ body{
  }
 
  .item h3{
-  font-size: 1 rem;
-  font-weight: 500;
-  
+  font-size: 1rem;
+  font-weight: 500; 
  }
  .item:hover{
   transform: scale(1.05);
@@ -233,7 +232,194 @@ body{
 
  /* porfolio */
  .project-container{
+  margin-top: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
  }
+
+ .project{
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  border: 1px solid #3a3a3a;
+  overflow: hidden;
+  transition: transform  0.5s ease, box-shadow 0.5s;
+ }
+ .project:hover{
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);;
+ }
+
+.project img{
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+.card{
+  padding: 20px;
+}
+.card h3 {
+color: #e0e0e0;
+margin-bottom: 10px;
+}
+.card p{
+  color: #a0a0a0;
+  line-height: 1.6;
+  text-align: start;
+  margin-bottom: 20px;
+}
+.card span{
+  background-color: rgba(255, 191, 0, 0.1);
+  color: #ffbf00;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-container{
+    max-width: 1000px;
+    gap: 48px;
+    padding: 24px;
+  }
+
+  .main-content{
+    padding: 26px;
+  }
+
+  .profile img{
+    height: 96px;
+    width: 96px;
+  }
+
+  nav{
+    gap: 28px;
+    padding: 18px 12px;
+    justify-content: flex-end;
+    flex-wrap: wrap; 
+  }
+
+  .grid-container{
+    gap: 22px;
+  }
+
+  .item{
+    padding: 18px;
+  }
+
+  .project-container{
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-container{
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 16px;
+  }
+
+
+  .side-bar{
+    position: static;
+    height: auto;
+    padding: 24px;
+  }
+
+  .main-content{
+    padding: 22px;
+  }
+
+  .heading{
+    font-size: 1.6rem;
+  }
+  .line{
+    width: 48px;
+    height: 4px;
+  }
+
+  .grid-container{
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    gap: 18px;
+  }
+
+  .item img{
+    height: 44px;
+    width: 44px;
+  }
+
+  .project-container{
+    grid-template-columns: 1fr; 
+  }
+
+  nav{
+    justify-content: center;
+    gap: 18px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  body { font-size: 15px; line-height: 1.45; }
+
+  .side-bar{
+    padding: 18px;
+    border-radius: 12px;
+  }
+  .profile img{
+    height: 80px;
+    width: 80px;
+  }
+  .profile h2{ font-size: 1.05rem; }
+
+  .main-content{
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .heading{
+    font-size: 1.45rem;
+  }
+
+  nav{
+    padding: 12px;
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+
+  .grid-container{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+  }
+  .item img{ height: 40px; width: 40px; }
+
+  .project img{
+    height: 160px;
+  }
+
+  .content{
+    font-size: 0.95rem;
+  }
+}
+
+img, .project, .item {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1201px) {
+  .side-bar{
+    position: sticky;
+    top: 40px;
+    height: 90vh;
+  }
+}
